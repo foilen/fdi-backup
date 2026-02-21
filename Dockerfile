@@ -32,6 +32,10 @@ RUN curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tm
     /tmp/aws/install && \
     rm -rf /tmp/awscliv2.zip /tmp/aws
 
+# acilia
+RUN curl -fsSL "https://deploy.foilen.com/acilia/bin-linux-amd64/acilia" -o /usr/local/bin/acilia && \
+  chmod 755 /usr/local/bin/acilia
+
 # MongoDB database tools
 RUN curl -fsSL "https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2404-x86_64-100.14.1.deb" -o /tmp/mongodb-database-tools.deb && \
     apt-get update && apt-get install -y /tmp/mongodb-database-tools.deb \
